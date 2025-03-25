@@ -12,10 +12,20 @@ def index(request):
     if request.method == 'POST':
         form = SmsForm(request.POST)
         if form.is_valid():
-            form.save()
-
-            return render(request, 'index.html')
-    return render(request, 'index.html')
+            # Forma ma'lumotlarini saqlash
+            Sms.objects.create(
+                name=form.cleaned_data['name'],
+                email=form.cleaned_data['email'],
+                subject=form.cleaned_data['subject'],
+                text=form.cleaned_data['text']
+            )
+            messages.success(request, "Xabaringiz yuborildi. Rahmat!")
+            return redirect('home')
+        else:
+            messages.error(request, "Xatolik yuz berdi. Iltimos, barcha maydonlarni to‘g‘ri to‘ldiring.")
+    else:
+        form = SmsForm()
+    return render(request, 'index.html', {'form': form})
 
 def signup(request):
     if request.method == 'POST':
@@ -42,16 +52,17 @@ def superuser_required(user):
 
 @login_required
 def admin_messages(request):
-    print("Request user:", request.user)  # Debugging uchun
-    print("Is superuser:", request.user.is_superuser)  # Debugging uchun
     if not request.user.is_superuser:
+        messages.error(request, "Bu sahifaga faqat superuserlar kira oladi!")
         return redirect('home')
-    messages = Sms.objects.all().order_by('-created_at')
-    return render(request, 'messages.html', {'messages': messages})
+    messages_list = Sms.objects.all().order_by('-created_at')
+    return render(request, 'messeges.html', {'messages': messages_list})
 
 @login_required
-@user_passes_test(superuser_required, login_url='login')
 def answer_message(request, message_id):
+    if not request.user.is_superuser:
+        messages.error(request, "Bu amalni faqat superuserlar bajarishi mumkin!")
+        return redirect('admin_messages')
     message = get_object_or_404(Sms, id=message_id)
     if request.method == 'POST':
         answer_text = request.POST.get('answer')

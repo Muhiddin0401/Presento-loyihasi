@@ -902,74 +902,74 @@
 
     <!-- Aloqa bo‘limi -->
     <section id="contact" class="contact section">
-  <div class="container section-title" data-aos="fade-up">
-    <h2>Aloqa</h2>
-    <p>Biz bilan bog'laning</p>
-  </div>
-
-  <div class="container" data-aos="fade-up" data-aos-delay="100">
-    <div class="row gy-4">
-      <div class="col-lg-5">
-        <div class="info-item" data-aos="fade-up" data-aos-delay="200">
-          <i class="bi bi-geo-alt"></i>
-          <h3>Manzil</h3>
-          <p>Toshkent, O'zbekiston</p>
-        </div>
-        <div class="info-item" data-aos="fade-up" data-aos-delay="300">
-          <i class="bi bi-telephone"></i>
-          <h3>Telefon</h3>
-          <p>+998 90 123 45 67</p>
-        </div>
-        <div class="info-item" data-aos="fade-up" data-aos-delay="400">
-          <i class="bi bi-envelope"></i>
-          <h3>Email</h3>
-          <p>info@example.com</p>
-        </div>
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Aloqa</h2>
+        <p>Biz bilan bog'laning</p>
       </div>
 
-      <div class="col-lg-7">
-        <form action="{% url 'home' %}" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
-          {% csrf_token %}
-          <div class="row gy-4">
-            <div class="col-md-6">
-              {{ form.name.label_tag }}
-              {{ form.name }}
-              {% if form.name.errors %}
-                <div class="error-message">{{ form.name.errors }}</div>
-              {% endif %}
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row gy-4">
+          <div class="col-lg-5">
+            <div class="info-item" data-aos="fade-up" data-aos-delay="200">
+              <i class="bi bi-geo-alt"></i>
+              <h3>Manzil</h3>
+              <p>Toshkent, O'zbekiston</p>
             </div>
-            <div class="col-md-6">
-              {{ form.email.label_tag }}
-              {{ form.email }}
-              {% if form.email.errors %}
-                <div class="error-message">{{ form.email.errors }}</div>
-              {% endif %}
+            <div class="info-item" data-aos="fade-up" data-aos-delay="300">
+              <i class="bi bi-telephone"></i>
+              <h3>Telefon</h3>
+              <p>+998 90 123 45 67</p>
             </div>
-            <div class="col-md-12">
-              {{ form.subject.label_tag }}
-              {{ form.subject }}
-              {% if form.subject.errors %}
-                <div class="error-message">{{ form.subject.errors }}</div>
-              {% endif %}
-            </div>
-            <div class="col-md-12">
-              {{ form.text.label_tag }}
-              {{ form.text }}
-              {% if form.text.errors %}
-                <div class="error-message">{{ form.text.errors }}</div>
-              {% endif %}
-            </div>
-            <div class="col-md-12 text-center">
-              <div class="loading">Yuklanmoqda</div>
-              <div class="error-message"></div>
-              <div class="sent-message">Xabaringiz yuborildi. Rahmat!</div>
-              <button type="submit">Xabar yuborish</button>
+            <div class="info-item" data-aos="fade-up" data-aos-delay="400">
+              <i class="bi bi-envelope"></i>
+              <h3>Email</h3>
+              <p>info@example.com</p>
             </div>
           </div>
-        </form>
+
+          <div class="col-lg-7">
+            <form action="{% url 'home' %}" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
+              {% csrf_token %}
+              <div class="row gy-4">
+                <div class="col-md-6">
+                  {{ form.name.label_tag }}
+                  {{ form.name }}
+                  {% if form.name.errors %}
+                    <div class="error-message">{{ form.name.errors }}</div>
+                  {% endif %}
+                </div>
+                <div class="col-md-6">
+                  {{ form.email.label_tag }}
+                  {{ form.email }}
+                  {% if form.email.errors %}
+                    <div class="error-message">{{ form.email.errors }}</div>
+                  {% endif %}
+                </div>
+                <div class="col-md-12">
+                  {{ form.subject.label_tag }}
+                  {{ form.subject }}
+                  {% if form.subject.errors %}
+                    <div class="error-message">{{ form.subject.errors }}</div>
+                  {% endif %}
+                </div>
+                <div class="col-md-12">
+                  {{ form.text.label_tag }}
+                  {{ form.text }}
+                  {% if form.text.errors %}
+                    <div class="error-message">{{ form.text.errors }}</div>
+                  {% endif %}
+                </div>
+                <div class="col-md-12 text-center">
+                  <div class="loading">Yuklanmoqda</div>
+                  <div class="error-message"></div>
+                  <div class="sent-message">Xabaringiz yuborildi. Rahmat!</div>
+                  <button type="submit">Xabar yuborish</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
 </section><!-- /Aloqa bo‘limi -->
 
 {% endblock %}
