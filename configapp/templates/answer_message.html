@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+  <section id="answer-message" class="answer-message section">
+    <div class="container section-title" data-aos="fade-up">
+      <h2>Xabarga javob berish</h2>
+      <p>Foydalanuvchi xabariga javob yozing</p>
+    </div>
+
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Xabar ma'lumotlari</h5>
+              <p><strong>Ism:</strong> {{ message.name }}</p>
+              <p><strong>Email:</strong> {{ message.email }}</p>
+              <p><strong>Mavzu:</strong> {{ message.subject }}</p>
+              <p><strong>Xabar:</strong> {{ message.text }}</p>
+              <p><strong>Yuborilgan vaqt:</strong> {{ message.created_at }}</p>
+
+              {% if message.is_answered %}
+                <h5 class="mt-4">Javob</h5>
+                <p>{{ message.answer }}</p>
+                <p><strong>Javob berilgan vaqt:</strong> {{ message.answered_at }}</p>
+              {% else %}
+                <h5 class="mt-4">Javob yozish</h5>
+                <form method="post">
+                  {% csrf_token %}
+                  <div class="form-group">
+                    <textarea name="answer" class="form-control" rows="5" placeholder="Javobingizni yozing" required></textarea>
+                  </div>
+                  <div class="text-center mt-3">
+                    <button type="submit" class="btn btn-primary">Javob yuborish</button>
+                  </div>
+                </form>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}

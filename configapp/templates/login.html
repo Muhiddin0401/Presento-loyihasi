@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+  <!-- Tizimga kirish bo'limi -->
+  <section id="login" class="login section">
+    <div class="container section-title" data-aos="fade-up">
+      <h2>Tizimga kirish</h2>
+      <p>Hisobingizga kirish uchun ma'lumotlarni kiriting</p>
+    </div>
+
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+      <div class="row justify-content-center">
+        <div class="col-lg-6">
+          <form method="post" action="{% url 'login' %}">
+            {% csrf_token %}
+            {% if form.non_field_errors %}
+              <div class="error-message">
+                {{ form.non_field_errors }}
+              </div>
+            {% endif %}
+            <div class="row gy-4">
+              <div class="col-md-12">
+                <label for="id_username">Foydalanuvchi nomi:</label>
+                {{ form.username }}
+                {% if form.username.errors %}
+                  <div class="error-message">{{ form.username.errors }}</div>
+                {% endif %}
+              </div>
+
+              <div class="col-md-12">
+                <label for="id_password">Parol:</label>
+                {{ form.password }}
+                {% if form.password.errors %}
+                  <div class="error-message">{{ form.password.errors }}</div>
+                {% endif %}
+              </div>
+
+              <div class="col-md-12 text-center">
+                <button type="submit">Kirish</button>
+              </div>
+            </div>
+          </form>
+          <div class="text-center mt-3">
+            <p>Hisobingiz yo'qmi? <a href="{% url 'signup' %}">Ro'yxatdan o'tish</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}

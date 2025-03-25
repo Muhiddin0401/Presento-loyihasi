@@ -1,0 +1,956 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+    <!-- Bosh sahifa bo‘limi -->
+    <section id="hero" class="hero section">
+
+      <img src="{% static 'assets/img/hero-bg.jpg' %}" alt="" data-aos="fade-in">
+
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6">
+            <h2 data-aos="fade-up" data-aos-delay="100">Presento bilan yaxshiroq raqamli tajriba</h2>
+            <p data-aos="fade-up" data-aos-delay="200">Biz Bootstrap yordamida veb-saytlar yaratuvchi iste’dodli dizaynerlar jamoasimiz</p>
+            <div class="d-flex mt-4" data-aos="fade-up" data-aos-delay="300">
+              <a href="#about" class="btn-get-started">Boshlash</a>
+              <a href="https://www.youtube.com/watch?v=Y7f98aduVJ8" class="glightbox btn-watch-video d-flex align-items-center"><i class="bi bi-play-circle"></i><span>Videoni ko‘rish</span></a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </section><!-- /Bosh sahifa bo‘limi -->
+
+    <!-- Mijozlar bo‘limi -->
+    <section id="clients" class="clients section">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="swiper init-swiper">
+          <script type="application/json" class="swiper-config">
+            {
+              "loop": true,
+              "speed": 600,
+              "autoplay": {
+                "delay": 5000
+              },
+              "slidesPerView": "auto",
+              "pagination": {
+                "el": ".swiper-pagination",
+                "type": "bullets",
+                "clickable": true
+              },
+              "breakpoints": {
+                "320": {
+                  "slidesPerView": 2,
+                  "spaceBetween": 40
+                },
+                "480": {
+                  "slidesPerView": 3,
+                  "spaceBetween": 60
+                },
+                "640": {
+                  "slidesPerView": 4,
+                  "spaceBetween": 80
+                },
+                "992": {
+                  "slidesPerView": 6,
+                  "spaceBetween": 120
+                }
+              }
+            }
+          </script>
+          <div class="swiper-wrapper align-items-center">
+            <div class="swiper-slide"><img src="{% static 'assets/img/clients/client-1.png' %}" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="{% static 'assets/img/clients/client-2.png' %}" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="{% static 'assets/img/clients/client-3.png' %}" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="{% static 'assets/img/clients/client-4.png' %}" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="{% static 'assets/img/clients/client-5.png' %}" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="{% static 'assets/img/clients/client-6.png' %}" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="{% static 'assets/img/clients/client-7.png' %}" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="{% static 'assets/img/clients/client-8.png' %}" class="img-fluid" alt=""></div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+
+      </div>
+
+    </section><!-- /Mijozlar bo‘limi -->
+
+    <!-- Biz haqimizda bo‘limi -->
+    <section id="about" class="about section section-bg dark-background">
+      <div class="container position-relative">
+        <div class="row gy-5">
+
+          <div class="content col-xl-5 d-flex flex-column" data-aos="fade-up" data-aos-delay="100">
+            <h3>Biz haqimizda qisqacha ma’lumot</h3>
+            <p>
+              Presento – bu veb-dizayn va ishlab chiqish sohasida yetakchi kompaniya bo‘lib, mijozlarimizga eng zamonaviy yechimlarni taqdim etadi. Biz har bir loyihada yuqori sifat va innovatsiyalarga intilamiz.
+            </p>
+            <a href="#" class="about-btn align-self-center align-self-xl-start"><span>Biz haqimizda</span> <i class="bi bi-chevron-right"></i></a>
+          </div>
+
+          <div class="col-xl-7" data-aos="fade-up" data-aos-delay="200">
+            <div class="row gy-4">
+
+              <div class="col-md-6 icon-box position-relative">
+                <i class="bi bi-briefcase"></i>
+                <h4><a href="" class="stretched-link">Professional xizmatlar</a></h4>
+                <p>Bizning jamoamiz har bir loyihada professional yondashuvni qo‘llaydi va mijozlar ehtiyojlariga mos yechimlarni taklif qiladi.</p>
+              </div><!-- Belgilar qutisi -->
+
+              <div class="col-md-6 icon-box position-relative">
+                <i class="bi bi-gem"></i>
+                <h4><a href="" class="stretched-link">Yuqori sifat</a></h4>
+                <p>Biz har bir loyihada eng yuqori sifat standartlariga rioya qilamiz va mijozlarimizga eng yaxshi natijalarni taqdim etamiz.</p>
+              </div><!-- Belgilar qutisi -->
+
+              <div class="col-md-6 icon-box position-relative">
+                <i class="bi bi-broadcast"></i>
+                <h4><a href="" class="stretched-link">Innovatsion yondashuv</a></h4>
+                <p>Biz eng so‘nggi texnologiyalardan foydalanamiz va mijozlarimizga innovatsion yechimlar taklif qilamiz.</p>
+              </div><!-- Belgilar qutisi -->
+
+              <div class="col-md-6 icon-box position-relative">
+                <i class="bi bi-easel"></i>
+                <h4><a href="" class="stretched-link">Mijozlar e’tibori</a></h4>
+                <p>Mijozlarimizning qoniqishi biz uchun birinchi o‘rinda turadi. Biz har bir loyihada ularning talablarini diqqat bilan o‘rganamiz.</p>
+              </div><!-- Belgilar qutisi -->
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- /Biz haqimizda bo‘limi -->
+
+    <!-- Statistikalar bo‘limi -->
+    <section id="stats" class="stats section">
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row gy-4">
+
+          <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
+            <i class="bi bi-emoji-smile"></i>
+            <div class="stats-item">
+              <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1" class="purecounter"></span>
+              <p>Xursand mijozlar</p>
+            </div>
+          </div><!-- Statistikalar elementi tugadi -->
+
+          <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
+            <i class="bi bi-journal-richtext"></i>
+            <div class="stats-item">
+              <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1" class="purecounter"></span>
+              <p>Loyihalar</p>
+            </div>
+          </div><!-- Statistikalar elementi tugadi -->
+
+          <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
+            <i class="bi bi-headset"></i>
+            <div class="stats-item">
+              <span data-purecounter-start="0" data-purecounter-end="1463" data-purecounter-duration="1" class="purecounter"></span>
+              <p>Qo‘llab-quvvatlash soatlari</p>
+            </div>
+          </div><!-- Statistikalar elementi tugadi -->
+
+          <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
+            <i class="bi bi-people"></i>
+            <div class="stats-item">
+              <span data-purecounter-start="0" data-purecounter-end="15" data-purecounter-duration="1" class="purecounter"></span>
+              <p>Mehnatkash xodimlar</p>
+            </div>
+          </div><!-- Statistikalar elementi tugadi -->
+        </div>
+      </div>
+    </section><!-- /Statistikalar bo‘limi -->
+
+    <!-- Yorliqlar bo‘limi -->
+    <section id="tabs" class="tabs section">
+
+      <div class="container">
+
+        <ul class="nav nav-tabs row  d-flex" data-aos="fade-up" data-aos-delay="100">
+          <li class="nav-item col-3">
+            <a class="nav-link active show" data-bs-toggle="tab" data-bs-target="#tabs-tab-1">
+              <i class="bi bi-binoculars"></i>
+              <h4 class="d-none d-lg-block">Bizning strategiyamiz</h4>
+            </a>
+          </li>
+          <li class="nav-item col-3">
+            <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tabs-tab-2">
+              <i class="bi bi-box-seam"></i>
+              <h4 class="d-none d-lg-block">Mahsulotlarimiz sifati</h4>
+            </a>
+          </li>
+          <li class="nav-item col-3">
+            <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tabs-tab-3">
+              <i class="bi bi-brightness-high"></i>
+              <h4 class="d-none d-lg-block">Innovatsion yondashuv</h4>
+            </a>
+          </li>
+          <li class="nav-item col-3">
+            <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tabs-tab-4">
+              <i class="bi bi-command"></i>
+              <h4 class="d-none d-lg-block">Mijozlar e’tibori</h4>
+            </a>
+          </li>
+        </ul><!-- Yorliq navigatsiyasi tugadi -->
+
+        <div class="tab-content" data-aos="fade-up" data-aos-delay="200">
+
+          <div class="tab-pane fade active show" id="tabs-tab-1">
+            <div class="row">
+              <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
+                <h3>Bizning strategiyamiz mijozlar ehtiyojlariga qaratilgan</h3>
+                <p class="fst-italic">
+                  Biz har bir loyihada mijozlarimizning talablarini diqqat bilan o‘rganamiz va ularga eng yaxshi yechimlarni taklif qilamiz.
+                </p>
+                <ul>
+                  <li><i class="bi bi-check2-all"></i>
+                    <span>Biz har bir loyihani sifatli va o‘z vaqtida bajarishga intilamiz.</span>
+                  </li>
+                  <li><i class="bi bi-check2-all"></i> <span>Mijozlar bilan doimiy aloqada bo‘lib, ularning fikrlarini inobatga olamiz.</span></li>
+                  <li><i class="bi bi-check2-all"></i> <span>Har bir loyihada eng so‘nggi texnologiyalardan foydalanamiz va mijozlarimizga eng yaxshi natijalarni taqdim etamiz.</span></li>
+                </ul>
+                <p>
+                  Bizning jamoamiz har bir loyihada yuqori sifatli xizmat ko‘rsatishga intiladi. Mijozlarimizning muvaffaqiyati bizning asosiy maqsadimizdir. Biz har doim yangi g‘oyalarni joriy etishga va mijozlarimizning biznesini rivojlantirishga yordam berishga tayyormiz.
+                </p>
+              </div>
+              <div class="col-lg-6 order-1 order-lg-2 text-center">
+                <img src="{% static 'assets/img/working-1.jpg' %}" alt="" class="img-fluid">
+              </div>
+            </div>
+          </div><!-- Yorliq kontenti elementi tugadi -->
+
+          <div class="tab-pane fade" id="tabs-tab-2">
+            <div class="row">
+              <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
+                <h3>Mahsulotlarimiz sifati va ishonchliligi bilan ajralib turadi</h3>
+                <p>
+                  Bizning mahsulotlarimiz eng yuqori sifat standartlariga javob beradi. Har bir mahsulot sinchkovlik bilan sinovdan o‘tkaziladi va mijozlarimizga eng yaxshi tajribani taqdim etadi.
+                </p>
+                <p class="fst-italic">
+                  Biz har bir mahsulotni mijozlarimizning ehtiyojlariga moslashtirishga katta e’tibor beramiz.
+                </p>
+                <ul>
+                  <li><i class="bi bi-check2-all"></i> <span>Har bir mahsulot eng yuqori sifat standartlariga javob beradi.</span></li>
+                  <li><i class="bi bi-check2-all"></i> <span>Mahsulotlarimiz mijozlarimizning talablariga mos ravishda ishlab chiqariladi.</span></li>
+                  <li><i class="bi bi-check2-all"></i> <span>Biz mahsulotlarimizning uzoq muddatli ishlashini kafolatlaymiz.</span></li>
+                  <li><i class="bi bi-check2-all"></i> <span>Har bir mahsulot sinovdan o‘tkazilib, mijozlarimizga eng yaxshi tajribani taqdim etadi.</span></li>
+                </ul>
+              </div>
+              <div class="col-lg-6 order-1 order-lg-2 text-center">
+                <img src="{% static 'assets/img/working-2.jpg' %}" alt="" class="img-fluid">
+              </div>
+            </div>
+          </div><!-- Yorliq kontenti elementi tugadi -->
+
+          <div class="tab-pane fade" id="tabs-tab-3">
+            <div class="row">
+              <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
+                <h3>Innovatsion yondashuvimiz bilan biznesingizni rivojlantiring</h3>
+                <p>
+                  Biz har doim eng so‘nggi texnologiyalardan foydalanamiz va mijozlarimizga innovatsion yechimlar taklif qilamiz. Bu esa biznesingizni yangi bosqichga olib chiqadi.
+                </p>
+                <ul>
+                  <li><i class="bi bi-check2-all"></i> <span>Eng so‘nggi texnologiyalardan foydalanamiz.</span></li>
+                  <li><i class="bi bi-check2-all"></i> <span>Mijozlarimizga innovatsion yechimlar taklif qilamiz.</span></li>
+                  <li><i class="bi bi-check2-all"></i> <span>Biznesingizni rivojlantirish uchun yangi g‘oyalarni joriy etamiz.</span></li>
+                </ul>
+                <p class="fst-italic">
+                  Bizning maqsadimiz – mijozlarimizning biznesini zamonaviy texnologiyalar yordamida rivojlantirish.
+                </p>
+              </div>
+              <div class="col-lg-6 order-1 order-lg-2 text-center">
+                <img src="{% static 'assets/img/working-3.jpg' %}" alt="" class="img-fluid">
+              </div>
+            </div>
+          </div><!-- Yorliq kontenti elementi tugadi -->
+
+          <div class="tab-pane fade" id="tabs-tab-4">
+            <div class="row">
+              <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
+                <h3>Mijozlar e’tibori – bizning asosiy ustuvorligimiz</h3>
+                <p>
+                  Biz har bir mijozimizga individual yondashamiz va ularning ehtiyojlarini diqqat bilan o‘rganamiz. Mijozlarimizning qoniqishi biz uchun eng muhimdir.
+                </p>
+                <p class="fst-italic">
+                  Biz mijozlarimiz bilan doimiy aloqada bo‘lib, ularning talablarini qondirishga intilamiz.
+                </p>
+                <ul>
+                  <li><i class="bi bi-check2-all"></i> <span>Har bir mijozga individual yondashuv.</span></li>
+                  <li><i class="bi bi-check2-all"></i> <span>Mijozlar talablarini diqqat bilan o‘rganamiz.</span></li>
+                  <li><i class="bi bi-check2-all"></i> <span>Mijozlar qoniqishi uchun eng yaxshi xizmatni taqdim etamiz.</span></li>
+                </ul>
+              </div>
+              <div class="col-lg-6 order-1 order-lg-2 text-center">
+                <img src="{% static 'assets/img/working-4.jpg' %}" alt="" class="img-fluid">
+              </div>
+            </div>
+          </div><!-- Yorliq kontenti elementi tugadi -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Yorliqlar bo‘limi -->
+
+    <!-- Xizmatlar bo‘limi -->
+    <section id="services" class="services section section-bg dark-background">
+
+      <!-- Bo‘lim sarlavhasi -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Xizmatlar</h2>
+        <p>Bizning xizmatlarimiz mijozlar ehtiyojlariga mos ravishda yuqori sifatda taqdim etiladi</p>
+      </div><!-- Bo‘lim sarlavhasi tugadi -->
+
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="service-item d-flex position-relative h-100">
+              <i class="bi bi-briefcase icon flex-shrink-0"></i>
+              <div>
+                <h4 class="title"><a href="service-details.html" class="stretched-link">Veb-dizayn</a></h4>
+                <p class="description">Biz zamonaviy va foydalanuvchilar uchun qulay veb-saytlar dizaynini yaratamiz, bu sizning biznesingizni yanada jozibador qiladi</p>
+              </div>
+            </div>
+          </div><!-- Xizmat elementi tugadi -->
+
+          <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="service-item d-flex position-relative h-100">
+              <i class="bi bi-card-checklist icon flex-shrink-0"></i>
+              <div>
+                <h4 class="title"><a href="service-details.html" class="stretched-link">Veb-ishlab chiqish</a></h4>
+                <p class="description">Bizning jamoamiz eng so‘nggi texnologiyalardan foydalanib, yuqori sifatli veb-saytlarni ishlab chiqadi</p>
+              </div>
+            </div>
+          </div><!-- Xizmat elementi tugadi -->
+
+          <div class="col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="service-item d-flex position-relative h-100">
+              <i class="bi bi-bar-chart icon flex-shrink-0"></i>
+              <div>
+                <h4 class="title"><a href="service-details.html" class="stretched-link">SEO optimizatsiyasi</a></h4>
+                <p class="description">Veb-saytingizni qidiruv tizimlarida yuqori o‘rinlarga olib chiqish uchun professional SEO xizmatlarini taklif qilamiz</p>
+              </div>
+            </div>
+          </div><!-- Xizmat elementi tugadi -->
+
+          <div class="col-md-6" data-aos="fade-up" data-aos-delay="400">
+            <div class="service-item d-flex position-relative h-100">
+              <i class="bi bi-binoculars icon flex-shrink-0"></i>
+              <div>
+                <h4 class="title"><a href="service-details.html" class="stretched-link">Marketing strategiyasi</a></h4>
+                <p class="description">Biznesingizni rivojlantirish uchun samarali marketing strategiyalarini ishlab chiqamiz va amalga oshiramiz</p>
+              </div>
+            </div>
+          </div><!-- Xizmat elementi tugadi -->
+
+          <div class="col-md-6" data-aos="fade-up" data-aos-delay="500">
+            <div class="service-item d-flex position-relative h-100">
+              <i class="bi bi-brightness-high icon flex-shrink-0"></i>
+              <div>
+                <h4 class="title"><a href="service-details.html" class="stretched-link">Grafik dizayn</a></h4>
+                <p class="description">Brendingiz uchun jozibali va professional grafik dizayn xizmatlarini taqdim etamiz</p>
+              </div>
+            </div>
+          </div><!-- Xizmat elementi tugadi -->
+
+          <div class="col-md-6" data-aos="fade-up" data-aos-delay="600">
+            <div class="service-item d-flex position-relative h-100">
+              <i class="bi bi-calendar4-week icon flex-shrink-0"></i>
+              <div>
+                <h4 class="title"><a href="service-details.html" class="stretched-link">Loyiha boshqaruvi</a></h4>
+                <p class="description">Loyihalaringizni samarali boshqarish va o‘z vaqtida yakunlash uchun professional yordam beramiz</p>
+              </div>
+            </div>
+          </div><!-- Xizmat elementi tugadi -->
+        </div>
+      </div>
+    </section><!-- /Xizmatlar bo‘limi -->
+
+    <!-- Portfel bo‘limi -->
+    <section id="portfolio" class="portfolio section">
+
+      <!-- Bo‘lim sarlavhasi -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Portfel</h2>
+        <p>Bizning amalga oshirilgan loyihalarimizni ko‘rib chiqing va ishimiz sifati bilan tanishing</p>
+      </div><!-- Bo‘lim sarlavhasi tugadi -->
+
+      <div class="container">
+
+        <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
+
+          <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
+            <li data-filter="*" class="filter-active">Hammasi</li>
+            <li data-filter=".filter-app">Ilova</li>
+            <li data-filter=".filter-product">Mahsulot</li>
+            <li data-filter=".filter-branding">Brending</li>
+            <li data-filter=".filter-books">Kitoblar</li>
+          </ul><!-- Portfel filtrlari tugadi -->
+
+          <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+              <div class="portfolio-content h-100">
+                <img src="{% static 'assets/img/portfolio/app-1.jpg' %}" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>Ilova 1</h4>
+                  <p>Zamonaviy mobil ilova dizayni va funksionalligi</p>
+                  <a href="{% static 'assets/img/portfolio/app-1.jpg' %}" title="Ilova 1" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="portfolio-details.html" title="Batafsil ma’lumot" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div><!-- Portfel elementi tugadi -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
+              <div class="portfolio-content h-100">
+                <img src="{% static 'assets/img/portfolio/product-1.jpg' %}" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>Mahsulot 1</h4>
+                  <p>Innovatsion mahsulot dizayni va ishlab chiqarish</p>
+                  <a href="{% static 'assets/img/portfolio/product-1.jpg' %}" title="Mahsulot 1" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="portfolio-details.html" title="Batafsil ma’lumot" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div><!-- Portfel elementi tugadi -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
+              <div class="portfolio-content h-100">
+                <img src="{% static 'assets/img/portfolio/branding-1.jpg' %}" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>Brending 1</h4>
+                  <p>Brend uchun jozibali va zamonaviy dizayn</p>
+                  <a href="{% static 'assets/img/portfolio/branding-1.jpg' %}" title="Brending 1" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="portfolio-details.html" title="Batafsil ma’lumot" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div><!-- Portfel elementi tugadi -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-books">
+              <div class="portfolio-content h-100">
+                <img src="{% static 'assets/img/portfolio/books-1.jpg' %}" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>Kitoblar 1</h4>
+                  <p>Kitob muqovasi uchun ijodiy dizayn</p>
+                  <a href="{% static 'assets/img/portfolio/books-1.jpg' %}" title="Brending 1" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="portfolio-details.html" title="Batafsil ma’lumot" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div><!-- Portfel elementi tugadi -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+              <div class="portfolio-content h-100">
+                <img src="{% static 'assets/img/portfolio/app-2.jpg' %}" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>Ilova 2</h4>
+                  <p>Foydalanuvchilar uchun qulay mobil ilova</p>
+                  <a href="{% static 'assets/img/portfolio/app-2.jpg' %}" title="Ilova 2" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="portfolio-details.html" title="Batafsil ma’lumot" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div><!-- Portfel elementi tugadi -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
+              <div class="portfolio-content h-100">
+                <img src="{% static 'assets/img/portfolio/product-2.jpg' %}" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>Mahsulot 2</h4>
+                  <p>Zamonaviy texnologiyalar asosida yaratilgan mahsulot</p>
+                  <a href="{% static 'assets/img/portfolio/product-2.jpg' %}" title="Mahsulot 2" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="portfolio-details.html" title="Batafsil ma’lumot" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div><!-- Portfel elementi tugadi -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
+              <div class="portfolio-content h-100">
+                <img src="{% static 'assets/img/portfolio/branding-2.jpg' %}" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>Brending 2</h4>
+                  <p>Brend imidjini oshirish uchun dizayn</p>
+                  <a href="{% static 'assets/img/portfolio/branding-2.jpg' %}" title="Brending 2" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="portfolio-details.html" title="Batafsil ma’lumot" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div><!-- Portfel elementi tugadi -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-books">
+              <div class="portfolio-content h-100">
+                <img src="{% static 'assets/img/portfolio/books-2.jpg' %}" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>Kitoblar 2</h4>
+                  <p>Kitob dizayni uchun zamonaviy yondashuv</p>
+                  <a href="{% static 'assets/img/portfolio/books-2.jpg' %}" title="Brending 2" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="portfolio-details.html" title="Batafsil ma’lumot" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div><!-- Portfel elementi tugadi -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+              <div class="portfolio-content h-100">
+                <img src="{% static 'assets/img/portfolio/app-3.jpg' %}" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>Ilova 3</h4>
+                  <p>Yuqori unumdorlikdagi mobil ilova</p>
+                  <a href="{% static 'assets/img/portfolio/app-3.jpg' %}" title="Ilova 3" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="portfolio-details.html" title="Batafsil ma’lumot" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div><!-- Portfel elementi tugadi -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
+              <div class="portfolio-content h-100">
+                <img src="{% static 'assets/img/portfolio/product-3.jpg' %}" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>Mahsulot 3</h4>
+                  <p>Foydalanuvchilar uchun qulay mahsulot dizayni</p>
+                  <a href="{% static 'assets/img/portfolio/product-3.jpg' %}" title="Mahsulot 3" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="portfolio-details.html" title="Batafsil ma’lumot" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div><!-- Portfel elementi tugadi -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
+              <div class="portfolio-content h-100">
+                <img src="{% static 'assets/img/portfolio/branding-3.jpg' %}" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>Brending 3</h4>
+                  <p>Brend imidji uchun ijodiy yechim</p>
+                  <a href="{% static 'assets/img/portfolio/branding-3.jpg' %}" title="Brending 2" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="portfolio-details.html" title="Batafsil ma’lumot" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div><!-- Portfel elementi tugadi -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-books">
+              <div class="portfolio-content h-100">
+                <img src="{% static 'assets/img/portfolio/books-3.jpg' %}" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>Kitoblar 3</h4>
+                  <p>Kitob muqovasi uchun professional dizayn</p>
+                  <a href="{% static 'assets/img/portfolio/books-3.jpg' %}" title="Brending 3" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="portfolio-details.html" title="Batafsil ma’lumot" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div><!-- Portfel elementi tugadi -->
+          </div><!-- Portfel konteyneri tugadi -->
+        </div>
+      </div>
+    </section><!-- /Portfel bo‘limi -->
+
+    <!-- Mijozlar fikrlari bo‘limi -->
+    <section id="testimonials" class="testimonials section">
+
+      <!-- Bo‘lim sarlavhasi -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Mijozlar fikrlari</h2>
+        <p>Mijozlarimizning biz haqimizdagi fikrlari va tajribalari bilan tanishing</p>
+      </div><!-- Bo‘lim sarlavhasi tugadi -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="swiper init-swiper">
+          <script type="application/json" class="swiper-config">
+            {
+              "loop": true,
+              "speed": 600,
+              "autoplay": {
+                "delay": 5000
+              },
+              "slidesPerView": "auto",
+              "pagination": {
+                "el": ".swiper-pagination",
+                "type": "bullets",
+                "clickable": true
+              },
+              "breakpoints": {
+                "320": {
+                  "slidesPerView": 1,
+                  "spaceBetween": 40
+                },
+                "1200": {
+                  "slidesPerView": 3,
+                  "spaceBetween": 10
+                }
+              }
+            }
+          </script>
+          <div class="swiper-wrapper">
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="{% static 'assets/img/testimonials/testimonials-1.jpg' %}" class="testimonial-img" alt="">
+                <h3>Muhiddin Ibrohimov</h3>
+                <h4>Bosh direktor va asoschi</h4>
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span>Presento jamoasi bilan ishlash juda ajoyib tajriba bo‘ldi. Ular bizning loyihamizni o‘z vaqtida va yuqori sifatda bajarishdi. Bizning biznesimiz ularning yordami bilan yangi bosqichga ko‘tarildi.</span>
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+              </div>
+            </div><!-- Fikr elementi tugadi -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="{% static 'assets/img/testimonials/testimonials-2.jpg' %}" class="testimonial-img" alt="">
+                <h3>Sara Wilsson</h3>
+                <h4>Dizayner</h4>
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span>Men Presento jamoasi bilan bir nechta loyihalarda hamkorlik qildim. Ularning dizayn bo‘yicha yondashuvi va mijozlar bilan muloqoti juda professional. Natijadan juda mamnunman!</span>
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+              </div>
+            </div><!-- Fikr elementi tugadi -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="{% static 'assets/img/testimonials/testimonials-3.jpg' %}" class="testimonial-img" alt="">
+                <h3>Jena Karlis</h3>
+                <h4>Do‘kon egasi</h4>
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span>Presento jamoasi mening onlayn do‘konim uchun ajoyib veb-sayt yaratdi. Ularning xizmatlari tufayli mijozlarim soni sezilarli darajada oshdi. Ular bilan ishlashdan xursandman.</span>
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+              </div>
+            </div><!-- Fikr elementi tugadi -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="{% static 'assets/img/testimonials/testimonials-4.jpg' %}" class="testimonial-img" alt="">
+                <h3>Matt Brandon</h3>
+                <h4>Frilanser</h4>
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span>Presento bilan hamkorlik frilanser sifatida mening faoliyatimni yanada osonlashtirdi. Ularning professional yondashuvi va tezkor javoblari meni hayratda qoldirdi.</span>
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+              </div>
+            </div><!-- Fikr elementi tugadi -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="{% static 'assets/img/testimonials/testimonials-5.jpg' %}" class="testimonial-img" alt="">
+                <h3>John Larson</h3>
+                <h4>Tadbirkor</h4>
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span>Presento jamoasi mening startapim uchun ajoyib veb-sayt va marketing strategiyasini ishlab chiqdi. Ularning yordami bilan biznesim tez rivojlandi. Ular bilan ishlashni tavsiya qilaman!</span>
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+              </div>
+            </div><!-- Fikr elementi tugadi -->
+
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+
+      </div>
+
+    </section><!-- /Mijozlar fikrlari bo‘limi -->
+
+    <!-- Narxlar bo‘limi -->
+    <section id="pricing" class="pricing section section-bg dark-background">
+
+      <!-- Bo‘lim sarlavhasi -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Narxlar</h2>
+        <p>Bizning xizmatlarimiz uchun mos narx rejalarini tanlang va biznesingizni rivojlantiring</p>
+      </div><!-- Bo‘lim sarlavhasi tugadi -->
+
+      <div class="container">
+
+        <div class="row g-4 g-lg-0">
+
+          <div class="col-lg-4" data-aos="zoom-in" data-aos-delay="100">
+            <div class="pricing-item">
+              <h3>Bepul reja</h3>
+              <h4><sup>$</sup>0<span> / oy</span></h4>
+              <ul>
+                <li><i class="bi bi-check"></i> <span>Asosiy veb-dizayn xizmatlari</span></li>
+                <li><i class="bi bi-check"></i> <span>24/7 qo‘llab-quvvatlash</span></li>
+                <li><i class="bi bi-check"></i> <span>1 oy bepul sinov muddati</span></li>
+                <li class="na"><i class="bi bi-x"></i> <span>SEO optimizatsiyasi</span></li>
+                <li class="na"><i class="bi bi-x"></i> <span>Maxsus marketing strategiyasi</span></li>
+              </ul>
+              <div class="text-center"><a href="#" class="buy-btn">Hozir sotib olish</a></div>
+            </div>
+          </div><!-- Narx elementi tugadi -->
+
+          <div class="col-lg-4 featured" data-aos="zoom-in" data-aos-delay="200">
+            <div class="pricing-item">
+              <h3>Biznes rejasi</h3>
+              <h4><sup>$</sup>29<span> / oy</span></h4>
+              <ul>
+                <li><i class="bi bi-check"></i> <span>Zamonaviy veb-dizayn xizmatlari</span></li>
+                <li><i class="bi bi-check"></i> <span>24/7 qo‘llab-quvvatlash</span></li>
+                <li><i class="bi bi-check"></i> <span>1 oy bepul sinov muddati</span></li>
+                <li><i class="bi bi-check"></i> <span>SEO optimizatsiyasi</span></li>
+                <li><i class="bi bi-check"></i> <span>Maxsus marketing strategiyasi</span></li>
+              </ul>
+              <div class="text-center"><a href="#" class="buy-btn">Hozir sotib olish</a></div>
+            </div>
+          </div><!-- Narx elementi tugadi -->
+
+          <div class="col-lg-4" data-aos="zoom-in" data-aos-delay="100">
+            <div class="pricing-item">
+              <h3>Ishlab chiquvchi rejasi</h3>
+              <h4><sup>$</sup>49<span> / oy</span></h4>
+              <ul>
+                <li><i class="bi bi-check"></i> <span>Tol‘iq veb-dizayn va ishlab chiqish</span></li>
+                <li><i class="bi bi-check"></i> <span>24/7 qo‘llab-quvvatlash</span></li>
+                <li><i class="bi bi-check"></i> <span>1 oy bepul sinov muddati</span></li>
+                <li><i class="bi bi-check"></i> <span>SEO optimizatsiyasi</span></li>
+                <li><i class="bi bi-check"></i> <span>Maxsus marketing strategiyasi</span></li>
+              </ul>
+              <div class="text-center"><a href="#" class="buy-btn">Hozir sotib olish</a></div>
+            </div>
+          </div><!-- Narx elementi tugadi -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Narxlar bo‘limi -->
+
+    <!-- Tez-tez so‘raladigan savollar bo‘limi -->
+    <section id="faq" class="faq section">
+
+      <!-- Bo‘lim sarlavhasi -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Tez-tez so‘raladigan savollar</h2>
+        <p>Bizning xizmatlarimiz haqida eng ko‘p so‘raladigan savollarga javoblar bilan tanishing</p>
+      </div><!-- Bo‘lim sarlavhasi tugadi -->
+
+      <div class="container">
+
+        <div class="row justify-content-center">
+
+          <div class="col-lg-10" data-aos="fade-up" data-aos-delay="100">
+
+            <div class="faq-container">
+
+              <div class="faq-item faq-active">
+                <h3>Veb-sayt yaratish qancha vaqt oladi?</h3>
+                <div class="faq-content">
+                  <p>Veb-sayt yaratish muddati loyihaning murakkabligiga bog‘liq. Odatda, oddiy saytlar 2-4 hafta ichida tayyor bo‘ladi, murakkab loyihalar esa 6-8 haftagacha davom etishi mumkin. Biz har bir loyihani o‘z vaqtida va yuqori sifatda yakunlashga intilamiz.</p>
+                </div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div><!-- Savol-javob elementi tugadi -->
+
+              <div class="faq-item">
+                <h3>SEO optimizatsiyasi xizmatlari qanday amalga oshiriladi?</h3>
+                <div class="faq-content">
+                  <p>Biz SEO optimizatsiyasini veb-saytingizni qidiruv tizimlarida yuqori o‘rinlarga olib chiqish uchun amalga oshiramiz. Bu jarayon kalit so‘zlar tahlili, kontent optimizatsiyasi, texnik SEO va tashqi havolalar strategiyasini o‘z ichiga oladi. Natijada, saytingiz ko‘proq tashrif buyuruvchilarni jalb qiladi.</p>
+                </div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div><!-- Savol-javob elementi tugadi -->
+
+              <div class="faq-item">
+                <h3>Mobil ilovalar ishlab chiqish xizmatini taklif qilasizlarmi?</h3>
+                <div class="faq-content">
+                  <p>Ha, biz Android va iOS platformalari uchun mobil ilovalar ishlab chiqish xizmatlarini taklif qilamiz. Bizning jamoamiz foydalanuvchilar uchun qulay va yuqori unumdorlikdagi ilovalarni yaratishga ixtisoslashgan. Loyiha talablariga qarab, ilovani qisqa muddatda tayyorlaymiz.</p>
+                </div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div><!-- Savol-javob elementi tugadi -->
+
+              <div class="faq-item">
+                <h3>Xizmatlar uchun qanday to‘lov usullari mavjud?</h3>
+                <div class="faq-content">
+                  <p>Biz mijozlarimizga qulaylik yaratish uchun turli to‘lov usullarini taklif qilamiz, jumladan, bank kartalari, onlayn to‘lov tizimlari va bank o‘tkazmalari. To‘lov shartlari loyiha boshlanishidan oldin kelishiladi.</p>
+                </div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div><!-- Savol-javob elementi tugadi -->
+
+              <div class="faq-item">
+                <h3>Loyiha tugagandan so‘ng qo‘llab-quvvatlash xizmatlari bormi?</h3>
+                <div class="faq-content">
+                  <p>Albatta! Biz loyiha tugagandan so‘ng ham mijozlarimizga qo‘llab-quvvatlash xizmatlarini taqdim etamiz. Bu xizmatlar veb-saytni yangilash, texnik muammolarni hal qilish va qo‘shimcha funksiyalarni qo‘shishni o‘z ichiga oladi.</p>
+                </div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div><!-- Savol-javob elementi tugadi -->
+
+              <div class="faq-item">
+                <h3>Mening biznesim uchun maxsus marketing strategiyasini ishlab chiqa olasizlarmi?</h3>
+                <div class="faq-content">
+                  <p>Ha, biz sizning biznesingiz ehtiyojlariga mos ravishda maxsus marketing strategiyasini ishlab chiqamiz. Bu strategiya sizning maqsadli auditoriyangizni jalb qilish va biznesingizni rivojlantirishga yordam beradi.</p>
+                </div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div><!-- Savol-javob elementi tugadi -->
+
+            </div>
+
+          </div><!-- Savol-javob ustuni tugadi -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Tez-tez so‘raladigan savollar bo‘limi -->
+
+    <!-- Jamoa bo‘limi -->
+    <section id="team" class="team section section-bg dark-background">
+
+      <!-- Bo‘lim sarlavhasi -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Jamoa</h2>
+        <p>Bizning professional jamoamiz bilan tanishing – ular sizning loyihangizni muvaffaqiyatli amalga oshirishga yordam beradi</p>
+      </div><!-- Bo‘lim sarlavhasi tugadi -->
+
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+            <div class="team-member">
+              <div class="member-img">
+                <img src="{% static 'assets/img/team/team-1.jpg' %}" class="img-fluid" alt="">
+                <div class="social">
+                  <a href=""><i class="bi bi-twitter-x"></i></a>
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href=""><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Walter White</h4>
+                <span>Bosh direktor</span>
+              </div>
+            </div>
+          </div><!-- Jamoa a’zosi tugadi -->
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
+            <div class="team-member">
+              <div class="member-img">
+                <img src="{% static 'assets/img/team/team-2.jpg' %}" class="img-fluid" alt="">
+                <div class="social">
+                  <a href=""><i class="bi bi-twitter-x"></i></a>
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href=""><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Sarah Jhonson</h4>
+                <span>Mahsulot menejeri</span>
+              </div>
+            </div>
+          </div><!-- Jamoa a’zosi tugadi -->
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
+            <div class="team-member">
+              <div class="member-img">
+                <img src="{% static 'assets/img/team/team-3.jpg' %}" class="img-fluid" alt="">
+                <div class="social">
+                  <a href=""><i class="bi bi-twitter-x"></i></a>
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href=""><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>William Anderson</h4>
+                <span>Texnologiya direktori</span>
+              </div>
+            </div>
+          </div><!-- Jamoa a’zosi tugadi -->
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="400">
+            <div class="team-member">
+              <div class="member-img">
+                <img src="{% static 'assets/img/team/team-4.jpg' %}" class="img-fluid" alt="">
+                <div class="social">
+                  <a href=""><i class="bi bi-twitter-x"></i></a>
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href=""><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Amanda Jepson</h4>
+                <span>Buxgalter</span>
+              </div>
+            </div>
+          </div><!-- Jamoa a’zosi tugadi -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Jamoa bo‘limi -->
+
+    <!-- Aloqa bo‘limi -->
+    <section id="contact" class="contact section">
+  <div class="container section-title" data-aos="fade-up">
+    <h2>Aloqa</h2>
+    <p>Biz bilan bog'laning</p>
+  </div>
+
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
+    <div class="row gy-4">
+      <div class="col-lg-5">
+        <div class="info-item" data-aos="fade-up" data-aos-delay="200">
+          <i class="bi bi-geo-alt"></i>
+          <h3>Manzil</h3>
+          <p>Toshkent, O'zbekiston</p>
+        </div>
+        <div class="info-item" data-aos="fade-up" data-aos-delay="300">
+          <i class="bi bi-telephone"></i>
+          <h3>Telefon</h3>
+          <p>+998 90 123 45 67</p>
+        </div>
+        <div class="info-item" data-aos="fade-up" data-aos-delay="400">
+          <i class="bi bi-envelope"></i>
+          <h3>Email</h3>
+          <p>info@example.com</p>
+        </div>
+      </div>
+
+      <div class="col-lg-7">
+        <form action="{% url 'home' %}" method="post" data-aos="fade-up" data-aos-delay="200">
+          {% csrf_token %}
+          <div class="row gy-4">
+            <div class="col-md-6">
+              <input type="text" name="name" class="form-control" placeholder="Ismingiz" required="">
+            </div>
+            <div class="col-md-6">
+              <input type="email" class="form-control" name="email" placeholder="Emailingiz" required="">
+            </div>
+            <div class="col-md-12">
+              <input type="text" class="form-control" name="subject" placeholder="Mavzu" required="">
+            </div>
+            <div class="col-md-12">
+              <textarea class="form-control" name="text" rows="6" placeholder="Xabar" required=""></textarea>
+            </div>
+            <div class="col-md-12 text-center">
+              <button type="submit">Xabar yuborish</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section><!-- /Aloqa bo‘limi -->
+
+{% endblock %}

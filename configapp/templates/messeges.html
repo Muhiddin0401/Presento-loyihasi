@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+  <section id="admin-messages" class="admin-messages section">
+    <div class="container section-title" data-aos="fade-up">
+      <h2>Xabarlar</h2>
+      <p>Foydalanuvchilar tomonidan yuborilgan xabarlarni ko‘ring va ularga javob bering</p>
+    </div>
+
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+      <div class="row">
+        <div class="col-lg-12">
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th>Ism</th>
+                <th>Email</th>
+                <th>Mavzu</th>
+                <th>Xabar</th>
+                <th>Yuborilgan vaqt</th>
+                <th>Javob berildi</th>
+                <th>Harakat</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for message in messages %}
+                <tr>
+                  <td>{{ message.name }}</td>
+                  <td>{{ message.email }}</td>
+                  <td>{{ message.subject }}</td>
+                  <td>{{ message.text }}</td>
+                  <td>{{ message.created_at }}</td>
+                  <td>
+                    {% if message.is_answered %}
+                      Ha ({{ message.answered_at }})
+                    {% else %}
+                      Yo‘q
+                    {% endif %}
+                  </td>
+                  <td>
+                    {% if not message.is_answered %}
+                      <a href="{% url 'answer_message' message.id %}" class="btn btn-primary btn-sm">Javob berish</a>
+                    {% else %}
+                      <a href="{% url 'answer_message' message.id %}" class="btn btn-secondary btn-sm">Javobni ko‘rish</a>
+                    {% endif %}
+                  </td>
+                </tr>
+              {% empty %}
+                <tr>
+                  <td colspan="7" class="text-center">Hozircha xabarlar yo‘q.</td>
+                </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}
