@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from django.contrib.auth import login
+from django.contrib.auth import login, logout
+from django.contrib import messages
 from .forms import SmsForm, SignUpForm
 from django.contrib.auth.decorators import login_required, user_passes_test
 from django.contrib.auth.views import LogoutView
@@ -40,23 +41,32 @@ def superuser_required(user):
     return user.is_superuser
 
 @login_required
-@user_passes_test(superuser_required, login_url='login')
 def admin_messages(request):
+    print("Request user:", request.user)  # Debugging uchun
+    print("Is superuser:", request.user.is_superuser)  # Debugging uchun
+    if not request.user.is_superuser:
+        return redirect('home')
     messages = Sms.objects.all().order_by('-created_at')
     return render(request, 'messages.html', {'messages': messages})
 
 @login_required
 @user_passes_test(superuser_required, login_url='login')
-def answer_message(request, messages_id):
-    message = get_object_or_404(Sms, id = messages_id)
-    if request.method == "POST":
-        answer_text = request.POSRT.get('answer')
+def answer_message(request, message_id):
+    message = get_object_or_404(Sms, id=message_id)
+    if request.method == 'POST':
+        answer_text = request.POST.get('answer')
         if answer_text:
             message.answer = answer_text
             message.is_answered = True
             message.answered_at = timezone.now()
             message.save()
+            messages.success(request, "Javob muvaffaqiyatli yuborildi!")
             return redirect('admin_messages')
-    return render(request, 'answer_message.html', {'message':message})
+        else:
+            messages.error(request, "Javob matni bo‘sh bo‘lmasligi kerak!")
+    return render(request, 'answer_message.html', {'message': message})
 
-
+def custom_logout(request):
+    logout(request)
+    messages.success(request, "Siz tizimdan muvaffaqiyatli chiqdingiz!")
+    return redirect('home')

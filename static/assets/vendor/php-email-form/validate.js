@@ -6,48 +6,56 @@
 (function () {
   "use strict";
 
-  let forms = document.querySelectorAll('.php-email-form');
+let forms = document.querySelectorAll('.php-email-form');
 
-  forms.forEach( function(e) {
-    e.addEventListener('submit', function(event) {
-      event.preventDefault();
+forms.forEach(function(form) {
+  form.addEventListener('submit', function(event) {
+    event.preventDefault();
 
-      let thisForm = this;
+    let thisForm = this;
+    let action = thisForm.getAttribute('action');
+    let formData = new FormData(thisForm);
 
-      let action = thisForm.getAttribute('action');
-      let recaptcha = thisForm.getAttribute('data-recaptcha-site-key');
-      
-      if( ! action ) {
-        displayError(thisForm, 'The form action property is not set!');
-        return;
-      }
-      thisForm.querySelector('.loading').classList.add('d-block');
-      thisForm.querySelector('.error-message').classList.remove('d-block');
-      thisForm.querySelector('.sent-message').classList.remove('d-block');
+    let loading = thisForm.querySelector('.loading');
+    let errorMessage = thisForm.querySelector('.error-message');
+    let sentMessage = thisForm.querySelector('.sent-message');
 
-      let formData = new FormData( thisForm );
+    loading.style.display = 'block';
+    errorMessage.style.display = 'none';
+    sentMessage.style.display = 'none';
 
-      if ( recaptcha ) {
-        if(typeof grecaptcha !== "undefined" ) {
-          grecaptcha.ready(function() {
-            try {
-              grecaptcha.execute(recaptcha, {action: 'php_email_form_submit'})
-              .then(token => {
-                formData.set('recaptcha-response', token);
-                php_email_form_submit(thisForm, action, formData);
-              })
-            } catch(error) {
-              displayError(thisForm, error);
-            }
-          });
-        } else {
-          displayError(thisForm, 'The reCaptcha javascript API url is not loaded!')
-        }
+    fetch(action, {
+      method: 'POST',
+      body: formData,
+      headers: {
+        'X-CSRFToken': csrftoken,  // CSRF tokenini qo'shish
+      },
+    })
+    .then(response => {
+      if (response.ok) {
+        return response.json();
       } else {
-        php_email_form_submit(thisForm, action, formData);
+        throw new Error('Xatolik yuz berdi');
       }
+    })
+    .then(data => {
+      loading.style.display = 'none';
+      if (data.status === 'success') {
+        sentMessage.style.display = 'block';
+        thisForm.reset();
+      } else {
+        errorMessage.innerHTML = data.message || 'Xabar yuborishda xatolik yuz berdi';
+        errorMessage.style.display = 'block';
+      }
+    })
+    .catch(error => {
+      loading.style.display = 'none';
+      errorMessage.innerHTML = error.message;
+      errorMessage.style.display = 'block';
     });
   });
+});
+
 
   function php_email_form_submit(thisForm, action, formData) {
     fetch(action, {

@@ -928,22 +928,41 @@
       </div>
 
       <div class="col-lg-7">
-        <form action="{% url 'home' %}" method="post" data-aos="fade-up" data-aos-delay="200">
+        <form action="{% url 'home' %}" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
           {% csrf_token %}
           <div class="row gy-4">
             <div class="col-md-6">
-              <input type="text" name="name" class="form-control" placeholder="Ismingiz" required="">
+              {{ form.name.label_tag }}
+              {{ form.name }}
+              {% if form.name.errors %}
+                <div class="error-message">{{ form.name.errors }}</div>
+              {% endif %}
             </div>
             <div class="col-md-6">
-              <input type="email" class="form-control" name="email" placeholder="Emailingiz" required="">
+              {{ form.email.label_tag }}
+              {{ form.email }}
+              {% if form.email.errors %}
+                <div class="error-message">{{ form.email.errors }}</div>
+              {% endif %}
             </div>
             <div class="col-md-12">
-              <input type="text" class="form-control" name="subject" placeholder="Mavzu" required="">
+              {{ form.subject.label_tag }}
+              {{ form.subject }}
+              {% if form.subject.errors %}
+                <div class="error-message">{{ form.subject.errors }}</div>
+              {% endif %}
             </div>
             <div class="col-md-12">
-              <textarea class="form-control" name="text" rows="6" placeholder="Xabar" required=""></textarea>
+              {{ form.text.label_tag }}
+              {{ form.text }}
+              {% if form.text.errors %}
+                <div class="error-message">{{ form.text.errors }}</div>
+              {% endif %}
             </div>
             <div class="col-md-12 text-center">
+              <div class="loading">Yuklanmoqda</div>
+              <div class="error-message"></div>
+              <div class="sent-message">Xabaringiz yuborildi. Rahmat!</div>
               <button type="submit">Xabar yuborish</button>
             </div>
           </div>

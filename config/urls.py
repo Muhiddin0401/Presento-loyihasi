@@ -6,15 +6,14 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('',index, name = 'home'),
-    path('accounts/', include('django.contrib.auth.urls')),
-    path('signup/', signup, name = 'signup'),
-    path('profile/', profile, name='profile'),
+    path('', index, name='home'),
     path('login/', LoginView.as_view(template_name='login.html'), name='login'),
-    path('logout/', CustomLogoutView.as_view(), name='logout'),
-    path('messages/', admin_messages, name = 'admin_messages'),
-    path('messages/answer/<int:message_id>/', answer_message, name = 'answer_message')
+    path('accounts/logout/', custom_logout, name='logout'),
+    path('signup/', signup, name='signup'),
+    path('profile/', profile, name='profile'),
+    path('admin/messages/', admin_messages, name='admin_messages'),  # admin.site.urls dan oldin
+    path('admin/messages/answer/<int:message_id>/', answer_message, name='answer_message'),  # admin.site.urls dan oldin
+    path('admin/', admin.site.urls),  # Oxirida joylashishi kerak
 ]
 
 if settings.DEBUG:
